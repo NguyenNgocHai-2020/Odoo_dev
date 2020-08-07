@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_account_user,access_student_account_user,Day_2.model_student,group_student_user,1,1,0,0
+access_student_manager_user,access_student_manager_user,Day_2.model_student,group_student_manager,1,1,1,0
+access_teacher_user_for_student,access_teacher_user_for_student,Day_2.model_student,group_teacher_user,1,1,1,1
+access_teacher_user_for_teacher,access_teacher_user_for_teacher,Day_2.model_teacher,group_teacher_user,1,1,0,0
+access_student_account_user_field,access_student_account_user_field,Day_2.model_student,group_student_user,0,0,0,0
+

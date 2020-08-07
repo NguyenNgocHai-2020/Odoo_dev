@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="cus_1" model="customer">
+            <field name="customer_name">Hoàng Ngọc Khánh</field>
+            <field name="customer_phone">0963227023</field>
+            <field name="customer_ID">163371023</field>
+            <field name="customer_amount">1</field>
+        </record>
+
+        <record id="cus_2" model="customer">
+            <field name="customer_name">Trần Bảo Anh</field>
+            <field name="customer_phone">0922536562</field>
+            <field name="customer_ID">653286118</field>
+            <field name="customer_amount">2</field>
+        </record>
+
+        <record id="cus_3" model="customer">
+            <field name="customer_name">Nguyễn Minh Anh</field>
+            <field name="customer_phone">0912437656</field>
+            <field name="customer_ID">653862176</field>
+            <field name="customer_amount">1</field>
+        </record>
+        <record id="cus_4" model="customer">
+            <field name="customer_name">Phan Quốc Anh</field>
+            <field name="customer_phone">0906533763</field>
+            <field name="customer_ID">167543178</field>
+            <field name="customer_amount">3</field>
+        </record>
+        <record id="cus_5" model="customer">
+            <field name="customer_name">Hoàng Thùy Giang</field>
+            <field name="customer_phone">0904227572</field>
+            <field name="customer_ID">985276342</field>
+            <field name="customer_amount">3</field>
+        </record>
+        <record id="cus_6" model="customer">
+            <field name="customer_name">Đỗ Đình Phúc</field>
+            <field name="customer_phone">0957246351</field>
+            <field name="customer_ID">876538243</field>
+            <field name="customer_amount">2</field>
+        </record>
+        <record id="cus_7" model="customer">
+            <field name="customer_name">Hoàng Kỳ Anh</field>
+            <field name="customer_phone">0350882554</field>
+            <field name="customer_ID">163582492</field>
+            <field name="customer_amount">2</field>
+        </record>
+        <record id="cus_8" model="customer">
+            <field name="customer_name">Nguyễn Hoàng Bảo An</field>
+            <field name="customer_phone">0836507724</field>
+            <field name="customer_ID">652864822</field>
+            <field name="customer_amount">2</field>
+        </record>
+        <record id="cus_9" model="customer">
+            <field name="customer_name">Lê Tâm An</field>
+            <field name="customer_phone">0957245342</field>
+            <field name="customer_ID">548238243</field>
+            <field name="customer_amount">1</field>
+        </record>
+    </data>
+</odoo>

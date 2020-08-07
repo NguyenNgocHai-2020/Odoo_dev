@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="booking_tree_view" model="ir.ui.view">
+        <field name="name">Booking View</field>
+        <field name="model">booking</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="customer_id" widget="many2many_tags"/>
+                <field name="room_ids" widget="many2many_tags"/>
+                <field name="check_in"/>
+                <field name="check_out"/>
+                <field name="cost"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="booking_form_view" model="ir.ui.view">
+        <field name="name">Booking Form</field>
+        <field name="model">booking</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="customer_id" widget="many2many_tags"/>
+                        <field name="room_ids" widget="many2many_tags" domain="[('state_room','=','available')]"/>
+                        <field name="check_in"/>
+                        <field name="check_out"/>
+                        <field name="cost"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

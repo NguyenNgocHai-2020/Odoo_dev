@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <act_window id="action_menu_room"
+                name="Rooms"
+                res_model="room"
+                view_mode="kanban,tree,form"
+    />
+    <act_window id="action_menu_customer"
+                name="Customer"
+                res_model="customer"
+                view_mode="tree,form"
+    />
+    <act_window id="action_menu_booking"
+                name="Booking"
+                res_model="booking"
+                view_mode="tree,form"
+    />
+    <menuitem id="Hotel_manager" name="Hotel Manager" sequence="3"/>
+
+     Menu item to open the Book list
+    <menuitem id="menu_hotel_manager"
+              name="Rooms"
+              parent="Hotel_manager"
+              action="action_menu_room"
+    />
+    <menuitem id="menu_customer"
+              name="Customer"
+              parent="Hotel_manager"
+              action="action_menu_customer"/>
+<!--              group="group_customer_user"-->
+    <menuitem id="menu_booking"
+              name="Booking"
+              parent="Hotel_manager"
+              action="action_menu_booking"
+    />
+</odoo>

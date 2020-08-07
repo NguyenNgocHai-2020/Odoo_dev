@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="student_tree_view" model="ir.ui.view">
+        <field name="name">Students View</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="dob"/>
+                <field name="gender"/>
+                <field name="class_id"/>
+                <field name="teacher_id" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="student_form_view" model="ir.ui.view">
+        <field name="name">Students Form</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml" >
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="class_id" domain="[('state','=','open'),('teacher_id','!=',False)]"/>
+                        <field name="teacher_id" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="address"/>
+                        <field name="dob"/>
+                        <field name="gender"/>
+                        <field name="leader"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="student_kanban_view" model="ir.ui.view">
+        <field name="name">Students_kanban</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <kanban>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <strong style="color:red;">
+                                    <field name="name"/>
+                                </strong>
+                                <ul>
+                                    <li>Phone :
+                                        <field name="phone"/>
+                                    </li>
+                                    <li>Date of birth :
+                                        <field name="dob"/>
+                                    </li>
+                                    <li>Gender :
+                                        <field name="gender"/>
+                                    </li>
+                                    <li>Class :
+                                        <field name="class_id"/>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="student_action" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem id="student_menu" name="Day 2 Demo" sequence="1"/>
+    <menuitem id="student_menu_child" name="Students"
+              parent="student_menu" action="student_action" sequence="1"/>
+</odoo>

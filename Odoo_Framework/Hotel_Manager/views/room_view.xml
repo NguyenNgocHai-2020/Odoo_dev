@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="room_tree_view" model="ir.ui.view">
+        <field name="name">Room View</field>
+        <field name="model">room</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="avatar_room" widget="image" width="50px" height="200px"/>
+                <field name="name_room"/>
+                <field name="type_room"/>
+                <field name="price_room"/>
+                <field name="description"/>
+                <field name="state_room"/>
+                <field name="booking_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="room_form_view" model="ir.ui.view">
+        <field name="name">Room Form</field>
+        <field name="model">room</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="avatar_room" widget="image" string="Image" class="oe_avatar"/>
+                        <field name="booking_ids" widget="many2many_tags"/>
+                        <field name="name_room"/>
+                        <field name="type_room"/>
+                        <field name="price_room"/>
+                        <field name="description"/>
+                        <field name="state_room"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="room_kanban_view" model="ir.ui.view">
+        <field name="name">Room Kanban</field>
+        <field name="model">room</field>
+        <field name="arch" type="xml">
+            <kanban default_order="id asc">
+                <field name="id"/>
+                <field name="avatar_room"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img alt="image error" t-if="record.avatar_room.raw_value"
+                                     t-att-src="kanban_image('room', 'avatar_room', record.id.raw_value)"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong style="color:red;">
+                                    <field name="name_room"/>
+                                </strong>
+                                <ul>
+                                    <li>Type Room :
+                                        <field name="type_room"/>
+                                    </li>
+                                    <li>Price :
+                                        <field name="price_room"/>
+                                    </li>
+                                    <li>State :
+                                        <field name="state_room"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+</odoo>
