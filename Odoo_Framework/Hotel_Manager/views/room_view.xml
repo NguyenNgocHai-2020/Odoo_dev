@@ -9,10 +9,7 @@
                 <field name="avatar_room" widget="image" width="50px" height="200px"/>
                 <field name="name_room"/>
                 <field name="type_room"/>
-                <field name="price_room"/>
-                <field name="description"/>
                 <field name="state_room"/>
-                <field name="booking_ids" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
@@ -27,10 +24,12 @@
                         <field name="avatar_room" widget="image" string="Image" class="oe_avatar"/>
                         <field name="booking_ids" widget="many2many_tags"/>
                         <field name="name_room"/>
+                    </group>
+                    <group string="Description">
                         <field name="type_room"/>
                         <field name="price_room"/>
-                        <field name="description"/>
                         <field name="state_room"/>
+                        <field name="description"/>
                     </group>
                 </sheet>
             </form>

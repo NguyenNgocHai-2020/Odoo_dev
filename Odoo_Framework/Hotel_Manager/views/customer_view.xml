@@ -9,7 +9,6 @@
                 <field name="customer_name"/>
                 <field name="customer_phone"/>
                 <field name="customer_ID"/>
-                <field name="customer_amount"/>
                 <field name="booking_ids"/>
             </tree>
         </field>
@@ -25,7 +24,6 @@
                         <field name="customer_name"/>
                         <field name="customer_phone"/>
                         <field name="customer_ID"/>
-                        <field name="customer_amount"/>
                         <field name="booking_ids"/>
                     </group>
                 </sheet>

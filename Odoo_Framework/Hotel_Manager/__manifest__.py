@@ -14,8 +14,8 @@
         'views/room_view.xml',
         'views/customer_view.xml',
         'views/booking_view.xml',
-        'data/customer_data_default.xml',
-        'data/room_data_default.xml',
+        # 'data/customer_data_default.xml',
+        # 'data/room_data_default.xml',
         'security/group_security.xml',
         'security/ir.model.access.csv'
     ],

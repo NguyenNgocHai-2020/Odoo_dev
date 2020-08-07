@@ -8,8 +8,6 @@
             <tree>
                 <field name="customer_id" widget="many2many_tags"/>
                 <field name="room_ids" widget="many2many_tags"/>
-                <field name="check_in"/>
-                <field name="check_out"/>
                 <field name="cost"/>
             </tree>
         </field>
@@ -21,12 +19,19 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
+                    <group string="Customer">
                         <field name="customer_id" widget="many2many_tags"/>
+                    </group>
+                    <group string="Amount">
+                            <field name="amount_adult"/>
+                            <field name="amount_child"/>
+                    </group>
+                    <group string="Details">
                         <field name="room_ids" widget="many2many_tags" domain="[('state_room','=','available')]"/>
                         <field name="check_in"/>
                         <field name="check_out"/>
                         <field name="cost"/>
+                        <field name="discount_code"/>
                     </group>
                 </sheet>
             </form>
