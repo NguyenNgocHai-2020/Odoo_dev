@@ -2,59 +2,39 @@
 <odoo>
     <data>
         <record id="room_1" model="room">
-            <field name="name_room">A103</field>
+            <field name="name_room">A102</field>
             <field name="type_room">single</field>
-<!--            <field name="price_room">20</field>-->
+            <field name="price_room">30</field>
             <field name="state_room">available</field>
+            <field name="description">...</field>
         </record>
         <record id="room_2" model="room">
-            <field name="name_room">A202</field>
-            <field name="type_room">single</field>
-<!--            <field name="price_room">25</field>-->
+            <field name="name_room">A103</field>
+            <field name="type_room">double</field>
+            <field name="price_room">50</field>
             <field name="state_room">available</field>
+            <field name="description">...</field>
         </record>
         <record id="room_3" model="room">
-            <field name="name_room">A213</field>
-            <field name="type_room">double</field>
-<!--            <field name="price_room">37</field>-->
-            <field name="state_room">confirmed</field>
+            <field name="name_room">A201</field>
+            <field name="type_room">single</field>
+            <field name="price_room">30</field>
+            <field name="state_room">confirm</field>
+            <field name="description">...</field>
         </record>
         <record id="room_4" model="room">
-            <field name="name_room">B223</field>
-            <field name="type_room">double</field>
-<!--            <field name="price_room">42</field>-->
+            <field name="name_room">A202</field>
+            <field name="type_room">single</field>
+            <field name="price_room">30</field>
             <field name="state_room">available</field>
+            <field name="description">...</field>
         </record>
         <record id="room_5" model="room">
-            <field name="name_room">B213</field>
+            <field name="name_room">A203</field>
             <field name="type_room">double</field>
-<!--            <field name="price_room">42</field>-->
+            <field name="price_room">50</field>
             <field name="state_room">available</field>
+            <field name="description">...</field>
         </record>
-        <record id="room_6" model="room">
-            <field name="name_room">B303</field>
-            <field name="type_room">double</field>
-<!--            <field name="price_room">47</field>-->
-            <field name="state_room">confirmed</field>
-        </record>
-        <record id="room_7" model="room">
-            <field name="name_room">B629</field>
-            <field name="type_room">single</field>
-<!--            <field name="price_room">39</field>-->
-            <field name="state_room">available</field>
-        </record>
-        <record id="room_8" model="room">
-            <field name="name_room">B712</field>
-            <field name="type_room">double</field>
-<!--            <field name="price_room">50</field>-->
-            <field name="state_room">available</field>
-        </record>
-        <record id="room_9" model="room">
-            <field name="name_room">A712</field>
-            <field name="type_room">single</field>
-<!--            <field name="price_room">39</field>-->
-            <field name="state_room">confirmed</field>
-        </record>
-
     </data>
 </odoo>
