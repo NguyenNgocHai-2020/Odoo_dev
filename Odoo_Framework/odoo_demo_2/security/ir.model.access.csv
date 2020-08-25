@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_model,access_student_model,odoo_demo_2.model_student,,1,0,0,0
+system_access_student_model,system_access_student_model,odoo_demo_2.model_student,base.group_system,1,1,1,0
+user_access_student_model,user_access_student_model,odoo_demo_2.model_student,odoo_demo_2.group_student_user,1,0,1,0
+manager_access_student_model,manager_access_student_model,odoo_demo_2.model_student,odoo_demo_2.group_student_manager,1,1,1,1
+access_class_model,access_class_model,odoo_demo_2.model_class_class,,1,0,0,0
+manager_access_class_model,manager_access_class_model,odoo_demo_2.model_class_class,odoo_demo_2.group_student_manager,1,1,1,1
+access_teacher_model,access_teacher_model,odoo_demo_2.model_teacher,,1,0,0,0
+user_access_teacher_model,user_access_teacher_model,odoo_demo_2.model_teacher,odoo_demo_2.group_student_user,1,0,1,0
+manager_access_teacher_model,manager_access_teacher_model,odoo_demo_2.model_teacher,odoo_demo_2.group_student_manager,1,1,1,0

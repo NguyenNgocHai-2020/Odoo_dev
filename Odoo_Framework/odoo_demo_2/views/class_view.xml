@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="class_tree_view" model="ir.ui.view">
+        <field name="name">Class Tree View</field>
+        <field name="model">class.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="student_count"/>
+                <field name="student_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="class_form_view" model="ir.ui.view">
+        <field name="name">Class Form View</field>
+        <field name="model">class.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+<!--                    <button name="close_class_action" states="open" string="Close Class" type="object" class="oe_highlight"/>-->
+                    <button name="%(odoo_demo_2.class_close_wizard_action)d" states="open" string="Close Class" type="action" class="oe_highlight"/>
+                    <button name="open_class_action" states="close" string="Open Class" type="object" class="oe_highlight"/>
+                    <button name="graduate_class_action" states="close" string="Graduate" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="open,close"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(odoo_demo_2.student_by_class_id_action)d" type="action" class="oe_stat_button" icon="fa-graduation-cap" >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="student_count" />
+                                </span>
+                                <span class="o_stat_text">Students</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name" />
+                        <!-- attrs="{'required': [('state', '=', 'open')],
+                                                    'readonly': [('state', '!=', 'open')]}"-->
+<!--                        <field name="state" />-->
+                        <field name="leader" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                    </group>
+                    <group>
+<!--                        <field name="student_count" readonly="True" invisible="1"/>-->
+                        <field name="student_ids" widget="many2many_tags"/>
+                        <field name="teacher_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="class_search_view" model="ir.ui.view">
+       <field name="name">Class</field>
+       <field name="model">class.class</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="student_ids" />
+                <field name="teacher_ids" />
+                <field name="leader" />
+                <group expand="1" string="Group By">
+                    <filter string="Group by State" name="group_by_state" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+       </field>
+    </record>
+
+    <record id="class_action" model="ir.actions.act_window">
+        <field name="name">Class</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">class.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="class_menu" name="Class"
+              parent="odoo_demo_2.student_root_menu" action="class_action"
+              sequence="2"/>
+</odoo>

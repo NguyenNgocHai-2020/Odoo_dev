@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="student_tree_view" model="ir.ui.view">
+        <field name="name">Student Tree View</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="dob" />
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="student_form_view" model="ir.ui.view">
+        <field name="name">Student Form View</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="graduate_action" string="Graduate" type="object" />
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="leader"/>
+                        <field name="class_id"
+                               domain="['|', ('state', '=', 'open'), ('teacher_ids', '!=', False)]"/>
+                        <field name="teacher_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="point"/>
+                        <field name="address"/>
+                        <field name="dob"/>
+                        <field name="gender"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="student_search_view" model="ir.ui.view">
+       <field name="name">Students</field>
+       <field name="model">student</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="name" />
+                <field name="class_id" />
+            </search>
+       </field>
+    </record>
+
+    <record id="student_action" model="ir.actions.act_window">
+        <field name="name">Student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="student_by_class_id_action" model="ir.actions.act_window">
+        <field name="name">Student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student</field>
+        <field name="context">{'search_default_class_id': active_id}</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="student_root_menu" name="Student Parent" sequence="1"/>
+    <menuitem id="student_child_menu" name="Student"
+              parent="student_root_menu" action="student_action"sequence="1"/>
+</odoo>

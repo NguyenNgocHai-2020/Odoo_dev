@@ -7,8 +7,8 @@ class Booking(models.Model):
     _rec_name = 'id'
 
     customer_id = fields.One2many(comodel_name='customer', inverse_name='booking_ids', string='Customer')
-    check_in = fields.Datetime(string='Check-in', required=True)
-    check_out = fields.Datetime(string='Check-out', required=True)
+    check_in = fields.Datetime(string='Check-in')
+    check_out = fields.Datetime(string='Check-out')
     amount_adult = fields.Integer(string='Adult')
     amount_child = fields.Integer(string='Child ')
     cost = fields.Float(compute='_total_price', string='Cost')

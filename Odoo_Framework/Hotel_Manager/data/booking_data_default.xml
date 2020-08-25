@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="booking_1" model="booking">
+            <field name="customer_id">1</field>
+<!--            <field name="check_in"></field>-->
+<!--            <field name="check_out"></field>-->
+            <field name="amount_adult">3</field>
+            <field name="amount_child">1</field>
+            <field name="room_ids">2,4</field>
+            <field name="discount_code">FS36K2</field>
+        </record>
+        <record id="booking_2" model="booking">
+            <field name="customer_id">2</field>
+<!--            <field name="check_in"></field>-->
+<!--            <field name="check_out"></field>-->
+            <field name="amount_adult">1</field>
+            <field name="amount_child">0</field>
+            <field name="room_ids">7</field>
+            <field name="discount_code">NEW30</field>
+        </record>
+        <record id="booking_3" model="booking">
+            <field name="customer_id">4</field>
+<!--            <field name="check_in"></field>-->
+<!--            <field name="check_out"></field>-->
+            <field name="amount_adult">1</field>
+            <field name="amount_child">2</field>
+            <field name="room_ids">5</field>
+            <field name="discount_code">NULL</field>
+        </record>
+        <record id="booking_4" model="booking">
+            <field name="customer_id">9</field>
+<!--            <field name="check_in"></field>-->
+<!--            <field name="check_out"></field>-->
+            <field name="amount_adult">5</field>
+            <field name="amount_child">3</field>
+            <field name="room_ids">8,3,9</field>
+            <field name="discount_code">NULL</field>
+        </record>
+        <record id="booking_5" model="booking">
+            <field name="customer_id">6</field>
+<!--            <field name="check_in"></field>-->
+<!--            <field name="check_out"></field>-->
+            <field name="amount_adult">2</field>
+            <field name="amount_child">0</field>
+            <field name="room_ids">6</field>
+            <field name="discount_code">KS7JN36</field>
+        </record>
+    </data>
+</odoo>

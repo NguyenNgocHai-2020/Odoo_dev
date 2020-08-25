@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_tree_inherit" model="ir.ui.view">
+        <field name="name">Inherit Sale Order Tree View</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree//field[@name='confirmation_date']" position="after">
+                <field name="team_id"/>
+            </xpath>
+<!--            <xpath expr="//tree//field[@name='confirmation_date']" position="before">-->
+<!--                <field name="present_person"/>-->
+<!--            </xpath>-->
+            <xpath expr="//tree" position="inside">
+                <field name="present_person"/>
+            </xpath>
+<!--            <xpath expr="//tree//field[@name='partner_id']" position="replace">-->
+<!--                <field name="present_person"/>-->
+<!--            </xpath>-->
+            <xpath expr="//tree//field[@name='partner_id']" position="replace"/>
+        </field>
+    </record>
+
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">Inherit Sale Order Form View</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="present_person"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="class_close_wizard_form_view" model="ir.ui.view">
+            <field name="name">Class Close Wizard</field>
+            <field name="model">class.close.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+<!--                        <field name="student_ids" readonly="0">-->
+<!--                            <tree editable="bottom" create="false" delete="false">-->
+<!--                                <field name="name" readonly="1"/>-->
+<!--                                <field name="point"/>-->
+<!--                            </tree>-->
+<!--                        </field>-->
+                        <separator string="Are you sure to close this class ?"/>
+                    </group>
+                    <footer>
+                        <button string="Close Class" name="close_class" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="class_close_wizard_action" model="ir.actions.act_window">
+            <field name="name">Class Close Wizard Action</field>
+            <field name="res_model">class.close.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>
