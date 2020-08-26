@@ -70,5 +70,5 @@
 
     <menuitem id="student_root_menu" name="Student Parent" sequence="1"/>
     <menuitem id="student_child_menu" name="Student"
-              parent="student_root_menu" action="student_action"sequence="1"/>
+              parent="student_root_menu" action="student_action" sequence="1"/>
 </odoo>

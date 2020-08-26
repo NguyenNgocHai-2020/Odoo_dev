@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="football_player_tree_view" model="ir.ui.view">
+        <field name="name">Football Players</field>
+        <field name="model">football.player</field>
+        <field name="arch" type="xml">
+            <tree string="Football Players">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="phone"/>
+                <field name="clb_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="football_player_form_view" model="ir.ui.view">
+        <field name="name">Football Players</field>
+        <field name="model">football.player</field>
+        <field name="arch" type="xml">
+            <form string="Football Players">
+                <sheet>
+                    <group>
+                        <group string='Information'>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <field name="state"/>
+                        </group>
+                        <group string="Contact">
+                            <field name="address"/>
+                            <field name="phone"/>
+                        </group>
+                        <notebook>
+                            <page string="Club">
+                                <group>
+                                    <field name="clb_id" domain="[('state','=','active')]"/>
+                                </group>
+                            </page>
+                            <page string="Training Places">
+                                <group>
+                                    <field name="training_place_ids"/>
+                                </group>
+                            </page>
+                        </notebook>
+
+                    </group>
+                    <group>
+                        <field name="salary"/>
+                        <field name="tax"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="football_player_search_view" model="ir.ui.view">
+        <field name="name">Search</field>
+        <field name="model">football.player</field>
+        <field name="arch" type="xml">
+            <search string="Football Player Search ...">
+                <field name="name"/>
+                <field name="clb_id"/>
+            </search>
+        </field>
+    </record>
+</odoo>

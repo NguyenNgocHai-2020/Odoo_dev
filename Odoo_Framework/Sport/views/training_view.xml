@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="training_place_tree_view" model="ir.ui.view">
+            <field name="name">Training Places</field>
+            <field name="model">training.places</field>
+            <field name="arch" type="xml">
+                <tree string="Training Place">
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="football_player_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="training_place_form_view" model="ir.ui.view">
+            <field name="name">Training Places</field>
+            <field name="model">training.places</field>
+            <field name="arch" type="xml">
+                <form string="Training Places">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="address"/>
+                            <field name="football_player_ids"
+                                    widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+
+</odoo>

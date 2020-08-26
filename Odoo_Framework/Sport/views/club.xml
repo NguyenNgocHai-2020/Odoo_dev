@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="club_tree_view" model="ir.ui.view">
+        <field name="name">Clubs</field>
+        <field name="model">club</field>
+        <field name="arch" type="xml">
+            <tree string="Clubs">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="address"/>
+                <field name="football_player_ids" widget="many2many_tags"/>
+                <field name="football_player_count"/>
+                <field name="state"/>
+                <field name="coach"/>
+            </tree>
+        </field>
+    </record>
+    <record id="club_search_view" model="ir.ui.view">
+        <field name="name">Club Search</field>
+        <field name="model">club</field>
+        <field name="arch" type="xml">
+            <search string="Club Search">
+                <field name="name"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="club_form_view" model="ir.ui.view">
+        <field name="name">Clubs</field>
+        <field name="model">club</field>
+        <field name="arch" type="xml">
+            <form string="Clubs">
+                <header>
+                    <button name="dissolution_club" states="active"
+                            string="Dissolution"
+                            type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="active,dissolution"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name='%(Sport.player_by_club_id_action)d' type="action" class="oe_stat_button"
+                                icon="fa-user">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="football_player_count"/>
+                                </span>
+                                <span class="o_stat_text">Football Players</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group string="Information">
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="address"/>
+                        </group>
+                        <group string="Responsibles">
+                            <field name="coach"/>
+                        </group>
+                        <notebook>
+                            <page string="Football Players">
+                                <group>
+                                    <field name="football_player_ids"
+                                           domain="[('state','=','free')]"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

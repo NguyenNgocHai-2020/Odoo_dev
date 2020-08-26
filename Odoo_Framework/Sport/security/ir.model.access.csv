@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+manager_access_club_model,manager_access_club_model,Sport.model_club,group_sport_manager,1,1,1,1
+manager_access_football_player_model,manager_access_football_player_model,Sport.model_football_player,group_sport_manager,1,1,1,1
+manager_access_training_place_model,manager_access_training_place_model,Sport.model_training_places,group_sport_manager,1,1,1,1
+user_access_club_model,user_access_club_model,Sport.model_club,group_sport_user,1,0,0,0
+user_access_football_player_model,user_access_football_player_model,Sport.model_football_player,group_sport_user,1,0,0,0
+user_access_training_place_model,user_access_training_place_model,Sport.model_training_places,group_sport_user,1,0,0,0

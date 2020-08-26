@@ -2,24 +2,23 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Odoo demo 2',
+    'name': 'Sport PYA0520E',
     'version': '1.0',
     'category': '',
     'sequence': 1,
-    'summary': 'Demo create odoo module and security',
+    'summary': 'About sport of PYA0520E',
     'description': "",
     'website': '',
     'depends': [
         'base',
     ],
     'data': [
-        'wizard/class_close_wizard_view.xml',
-
-        'security/odoo_demo_security.xml',
+        'security/group_user.xml',
         'security/ir.model.access.csv',
-        'views/student_view.xml',
-        'views/class_view.xml',
-        'views/teacher_view.xml',
+        'views/menu_action.xml',
+        'views/training_view.xml',
+        'views/club.xml',
+        'views/football_player.xml'
     ],
     'installable': True,
     'application': True,

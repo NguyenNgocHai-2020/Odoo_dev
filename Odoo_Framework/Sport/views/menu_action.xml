@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <act_window id="action_menu_training_places"
+                name="Training Places"
+                res_model="training.places"
+                view_mode="tree,form"
+    />
+    <act_window id="action_menu_club"
+                name="Clubs"
+                res_model="club"
+                view_mode="tree,form"
+    />
+    <act_window id="action_menu_football_player"
+                name="Football Players"
+                res_model="football.player"
+                view_mode="tree,form"
+    />
+    <menuitem id="Sport" name="Sport" sequence="1"/>
+
+
+    <menuitem id="Training_places"
+              name="Training Places"
+              parent="Sport"
+              action="action_menu_training_places"
+    />
+    <menuitem id="menu_club"
+              name="Clubs"
+              parent="Sport"
+              action="action_menu_club"/>
+<!--              group="group_customer_user"-->
+    <menuitem id="menu_football_player"
+              name="Football Players"
+              parent="Sport"
+              action="action_menu_football_player"
+    />
+
+    <record id="player_by_club_id_action" model="ir.actions.act_window">
+        <field name="name">football.player</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">football.player</field>
+        <field name="context">{'search_default_clb_id': active_id}</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
