@@ -13,8 +13,6 @@
         'base',
     ],
     'data': [
-        'wizard/class_close_wizard_view.xml',
-
         'security/odoo_demo_security.xml',
         'security/ir.model.access.csv',
         'views/student_view.xml',

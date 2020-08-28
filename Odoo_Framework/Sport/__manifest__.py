@@ -13,6 +13,7 @@
         'base',
     ],
     'data': [
+        'wizard/dissolution_club_wizard_view.xml',
         'security/group_user.xml',
         'security/ir.model.access.csv',
         'views/menu_action.xml',

@@ -2,18 +2,18 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Odoo inherit demo',
+    'name': 'ITPlus-PYTHON',
     'version': '1.0',
     'category': '',
     'sequence': 1,
-    'summary': 'Demo inherit',
+    'summary': 'About class PYA0520E',
     'description': "",
     'website': '',
     'depends': [
-        'sale',
+        'base',
     ],
     'data': [
-        'views/sale_order_view.xml',
+        'views/menu_action.xml'
     ],
     'installable': True,
     'application': True,

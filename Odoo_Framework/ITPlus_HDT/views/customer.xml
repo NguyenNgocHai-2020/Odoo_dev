@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="customer_tree_view" model="ir.ui.view">
+            <field name="name">Customers</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <tree string="Customers">
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="gender"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="customer_form_view" model="ir.ui.view">
+            <field name="name">Customer Form</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <form string="Customer Form">
+                    <sheet>
+                        <group string="Information">
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="gender"/>
+                            <field name="address"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -7,7 +7,7 @@
             <tree string="Football Players">
                 <field name="name"/>
                 <field name="age"/>
-                <field name="phone"/>
+                <field name="phone" widget="phone"/>
                 <field name="clb_id"/>
                 <field name="state"/>
             </tree>
@@ -28,22 +28,21 @@
                         </group>
                         <group string="Contact">
                             <field name="address"/>
-                            <field name="phone"/>
+                            <field name="phone" widget="phone"/>
                         </group>
-                        <notebook>
-                            <page string="Club">
-                                <group>
-                                    <field name="clb_id" domain="[('state','=','active')]"/>
-                                </group>
-                            </page>
-                            <page string="Training Places">
-                                <group>
-                                    <field name="training_place_ids"/>
-                                </group>
-                            </page>
-                        </notebook>
-
                     </group>
+                    <notebook>
+                        <page string="Club">
+                            <group>
+                                <field name="clb_id" domain="[('state','=','active')]"/>
+                            </group>
+                        </page>
+                        <page string="Training Places">
+                            <group>
+                                <field name="training_place_ids"/>
+                            </group>
+                        </page>
+                    </notebook>
                     <group>
                         <field name="salary"/>
                         <field name="tax"/>

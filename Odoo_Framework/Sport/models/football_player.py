@@ -1,7 +1,7 @@
 from odoo import api, fields, models
 
 
-class Football_Player(models.Model):
+class FootballPlayer(models.Model):
     _name = 'football.player'
 
     name = fields.Char(string='Name',
@@ -20,12 +20,14 @@ class Football_Player(models.Model):
                        store=True)
     state = fields.Selection(selection=[('free', 'Free'),
                                         ('payroll', 'Payroll')],
-                             default='free')
+                             default='free', compute='_state_player', store=True)
 
-    @api.onchange('clb_id')
-    def onchange_state(self):
+    @api.depends('clb_id')
+    def _state_player(self):
         if self.clb_id:
             self.state = 'payroll'
+        else:
+            self.state = 'free'
 
     @api.onchange('training_place_ids')
     def get_default_salary(self):
@@ -33,11 +35,6 @@ class Football_Player(models.Model):
             self.salary = 15000000
         else:
             self.salary = 10000000
-        # for player in self:
-        #     if len(player.training_place_ids) > 1:
-        #         player.salary = 15000000
-        #     else:
-        #         player.salary = 10000000
 
     @api.depends('salary')
     def tax_calculation(self):
@@ -48,11 +45,11 @@ class Football_Player(models.Model):
     def create(self, vals):
         if vals.get('name', False):
             vals['name'] = vals['name'].title()
-        res = super(Football_Player, self).create(vals)
+        res = super(FootballPlayer, self).create(vals)
         return res
 
     def write(self, vals):
         if vals.get('name', False):
             vals['name'] = vals['name'].title()
-        res = super(Football_Player, self).write(vals)
+        res = super(FootballPlayer, self).write(vals)
         return res

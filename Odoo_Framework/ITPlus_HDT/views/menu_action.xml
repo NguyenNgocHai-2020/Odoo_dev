@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <act_window id="action_menu_customer"
+                name="Customer"
+                res_model="customer"
+                view_mode="tree,form"
+    />
+    <act_window id="action_menu_product"
+                name="Product"
+                res_model="product"
+                view_mode="tree,form"
+    />
+    <act_window id="action_menu_order"
+                name="Order"
+                res_model="order"
+                view_mode="tree,form"
+    />
+    <act_window id="action_menu_order_line"
+                name="Order Line"
+                res_model="order.line"
+                view_mode="tree,form"
+    />
+
+    <menuitem id="Python" name="PYA0520E" sequence="1"/>
+    <menuitem id="customer_menu"
+              name="Customer"
+              parent="Python"
+              action="action_menu_training_places"
+    />
+    <menuitem id="product_menu"
+              name="Productr"
+              parent="Python"
+              action="action_menu_product"
+    />
+    <menuitem id="order_menu"
+              name="Order"
+              parent="Python"
+              action="action_menu_order"
+    />
+    <menuitem id="order_line_menu"
+              name="Order Line"
+              parent="Python"
+              action="action_menu_order_line"
+    />
+
+</odoo>

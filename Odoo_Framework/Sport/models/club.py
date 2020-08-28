@@ -20,12 +20,16 @@ class Club(models.Model):
 
     def dissolution_club(self):
         self.state = 'dissolution'
+        self.football_player_ids.write({'state': 'free'})
+        self.football_player_ids = False
 
-    @api.onchange('football_player_ids')
-    def onchange_state_player(self):
-        if self.football_player_ids:
-            for player in self.football_player_ids:
-                player.write({'state': 'payroll'})
+    # @api.depends('football_player_ids')
+    # def get_state_player(self):
+    #     if self.football_player_ids:
+    #         for player in self.football_player_ids:
+    #             player.state = 'payroll'
+    #         else:
+    #
 
     @api.depends('football_player_ids')
     def _get_player_count(self):

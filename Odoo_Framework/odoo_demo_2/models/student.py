@@ -69,11 +69,3 @@ class Student(models.Model):
     def graduate_action_one(self):
         if self.point > 5.0:
             self.state = 'graduate'
-        else:
-            raise ValidationError('Student %s have the point less than 5.0' % self.name)
-
-    def unlink(self):
-        for student in self:
-            if student.state == 'study':
-                raise ValidationError('You can not delete the student have state is study')
-        return super(Student, self).unlink()
